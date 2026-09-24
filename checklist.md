@@ -8,7 +8,7 @@
 - [x] .lower() y .strip()
 - [x] break
 
-## Etapa 1: Manos, sin IA — EN PROGRESO
+## Etapa 1: Manos, sin IA — COMPLETA
 - [x] import webbrowser
 - [x] Función abrir(mensaje, url)
 - [x] Diccionario `paginas` (youtube, crunchyroll, spotify, google)
@@ -17,7 +17,7 @@
 - [x] Manejar el error si la carpeta ya existe (FileExistsError)
 - [x] Nombre de carpeta dinámico (input del usuario, no fijo en el código)
 - [x] Abrir apps instaladas (os.startfile, ej. Spotify de escritorio)
-- [ ] Aprender Git básico (para el portafolio a futuro)
+- [x] Aprender Git básico (para el portafolio a futuro)
 
 ## Etapa 2: Cerebro local con Ollama
 - [ ] Instalar Ollama (lmstudio)(speach to text)
