@@ -1,0 +1,17 @@
+Elementos que usamos:
+    import webbrowser
+
+    .strip()
+
+    .lower()
+
+def: 2 variables en este ejemplo, cuando llamas a la funcion lo primero sera el mensaje y lo segund la url que se va a abrir
+    def abrir(mensaje, url): #La funcion
+    print(mensaje)
+    webbrowser.open(url)
+
+while:
+
+if/elif:
+
+else:
