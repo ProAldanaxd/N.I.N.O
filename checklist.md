@@ -24,7 +24,7 @@
 - [x] Probar un modelo chico desde la terminal (3B)
 - [x] Llamar al modelo desde Python (función pensar())
 - [x] Conectar pensar() al ciclo while, reemplazando las respuestas fijas
-- [ ] Probar un modelo 7-8B y comparar calidad
+- [x] Probar un modelo 7-8B y comparar calidad
 
 ## Etapa 3: Personas intercambiables
 - [ ] Un archivo por personaje (prompt, saludo, voz, modelo) — nino.json ya existe como borrador
