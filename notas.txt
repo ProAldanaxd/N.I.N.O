@@ -1,5 +1,8 @@
+.Nino\Scripts\Activate 
 Elementos que usamos:
+    import ollama
     import webbrowser
+    import os
 
     .strip()
 
@@ -10,8 +13,21 @@ def: 2 variables en este ejemplo, cuando llamas a la funcion lo primero sera el 
     print(mensaje)
     webbrowser.open(url)
 
+diccionarios
+
 while:
 
 if/elif:
 
 else:
+
+Listas:
+
+Liberias instaladas necesarias:
+ollama (tambien es una app local, se necesitan ambos)
+    Para ver o borrar los modelos de ollama:
+    ollama list
+    ollama rm nombre_del_modelo 
+    MODELOS:(llama3.2:3b)(llama3.1:8b)
+    COMANDOS: ollama run llama3.2:3b 
+              ollama run llama3.1:8b 

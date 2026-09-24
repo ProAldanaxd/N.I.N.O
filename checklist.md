@@ -19,11 +19,11 @@
 - [x] Abrir apps instaladas (os.startfile, ej. Spotify de escritorio)
 - [x] Aprender Git básico (para el portafolio a futuro)
 
-## Etapa 2: Cerebro local con Ollama
-- [ ] Instalar Ollama (lmstudio)(speach to text)
-- [ ] Probar un modelo chico desde la terminal (3B)
-- [ ] Llamar al modelo desde Python (función pensar())
-- [ ] Conectar pensar() al ciclo while, reemplazando las respuestas fijas
+## Etapa 2: Cerebro local con Ollama -COMPLETA
+- [x] Instalar Ollama (lmstudio)(speach to text)
+- [x] Probar un modelo chico desde la terminal (3B)
+- [x] Llamar al modelo desde Python (función pensar())
+- [x] Conectar pensar() al ciclo while, reemplazando las respuestas fijas
 - [ ] Probar un modelo 7-8B y comparar calidad
 
 ## Etapa 3: Personas intercambiables
