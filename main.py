@@ -1,12 +1,22 @@
 import ollama #Libreria en la cual vamos a usar la API
 import webbrowser #Libreria para abrir paginas web
 import os #Libreria para crear carpetas/abrir aplicaciones
+import json #Archivos json que son de texto, para darle instrucciones a la IA
+with open("nino.json", "r", encoding="utf-8") as archivo:
+    nino = json.load(archivo)
 
-def pensar(mensaje): #Funcion principal de la IA, usa la libreria de ollama, que es la API (literal el jarvis)
-    respuesta = ollama.chat(model="llama3.2:3b", messages=[ #Esto es escrito por alguien mas para llamar a la API
-        {"role": "user", "content": mensaje}
-    ])
-    return respuesta["message"]["content"]
+prompt_final = nino["prompt"].replace("{USUARIO}", "JC")
+
+historial = [
+    {"role": "system", "content": prompt_final}
+]
+
+def pensar(mensaje):
+    historial.append({"role": "user", "content": mensaje})
+    respuesta = ollama.chat(model="llama3.1:8b", messages=historial)
+    texto_respuesta = respuesta["message"]["content"]
+    historial.append({"role": "assistant", "content": texto_respuesta})
+    return texto_respuesta
 
 def abrir_url(mensaje, url): #2 variables en este ejemplo, cuando llamas a la funcion lo primero sera el mensaje y lo segunda la url que se va a abrir
     print(mensaje)
@@ -28,7 +38,7 @@ apps = {
     "abre outlook": ["Aqui tienes, tonto","C:/Program Files/WindowsApps/Microsoft.OutlookForWindows_1.2026.908.200_x64__8wekyb3d8bbwe"],
 }
 
-print("Hola, Idiota")
+print(f"Nino: {nino['saludo']}")
 while True: #Este while hace que nuestro jarvis (Nino) siempre esté esperando que le digan algo
     texto = input("Tu: ").strip().lower() #"Barra de accion" lo que tiene al lado ayuda un poco a que reconozca mas escrituras
     if texto == "salir": #Final
@@ -49,4 +59,4 @@ while True: #Este while hace que nuestro jarvis (Nino) siempre esté esperando q
         abrir_app(datos[0], datos[1])
     else:
         resultado = pensar(texto)
-        print(resultado)
+        print("Nino: ",resultado)

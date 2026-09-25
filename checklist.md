@@ -8,29 +8,34 @@
 - [x] .lower() y .strip()
 - [x] break
 
-## Etapa 1: Manos, sin IA — COMPLETA
+## Etapa 1: Manos, sin IA — EN PROGRESO
 - [x] import webbrowser
 - [x] Función abrir(mensaje, url)
 - [x] Diccionario `paginas` (youtube, crunchyroll, spotify, google)
 - [x] Refactor: un solo elif usando "in" sobre el diccionario
-- [x] **>>> AQUÍ VAS: crear carpetas con os.makedirs (import os, elif "crea carpeta tarea")**
-- [x] Manejar el error si la carpeta ya existe (FileExistsError)
+- [x] Crear carpetas con os.makedirs
+- [x] Manejar el error si la carpeta ya existe (if not os.path.exists / else)
 - [x] Nombre de carpeta dinámico (input del usuario, no fijo en el código)
-- [x] Abrir apps instaladas (os.startfile, ej. Spotify de escritorio)
-- [x] Aprender Git básico (para el portafolio a futuro)
+- [x] Abrir apps instaladas (os.startfile, ej. Word) — con función y diccionario separados de las páginas web (abrir_app / apps)
+- [x] Aprender Git básico (init, add/commit, push a GitHub) — ETAPA 1 COMPLETA
 
-## Etapa 2: Cerebro local con Ollama -COMPLETA
-- [x] Instalar Ollama (lmstudio)(speach to text)
-- [x] Probar un modelo chico desde la terminal (3B)
+## Etapa 2: Cerebro local con Ollama
+- [x] Instalar Ollama
+- [x] pip install ollama en un venv propio del proyecto, con .gitignore para no subir .venv a GitHub
+- [x] Probar un modelo chico desde la terminal (llama3.2:3b, responde bien en español)
 - [x] Llamar al modelo desde Python (función pensar())
-- [x] Conectar pensar() al ciclo while, reemplazando las respuestas fijas
-- [x] Probar un modelo 7-8B y comparar calidad
+- [x] Conectar pensar() al ciclo while, reemplazando las respuestas fijas — Nino ya responde de verdad en el else
+- [x] Probar un modelo 7-8B (llama3.1:8b) y comparar calidad — ETAPA 2 COMPLETA
 
 ## Etapa 3: Personas intercambiables
-- [ ] Un archivo por personaje (prompt, saludo, voz, modelo) — nino.json ya existe como borrador
-- [ ] Comando para cambiar de personaje
-- [ ] Nino como personaje por defecto
+- [x] nino.json completo (prompt largo, personalidad post-declaración), conectado a pensar() vía "role": "system"
+- [x] Historial de conversación (lista que crece con .append) para memoria de corto plazo y menos relectura del prompt
+- [x] Fix de ambigüedad de identidad usuario/personaje (regla explícita: "tú eres Nino, quien te escribe es {USUARIO}")
+- [x] Nino como personaje por defecto (es el único que existe por ahora, y responde bien)
+- [ ] **>>> AQUÍ VAS: Comando para cambiar de personaje**
 - [ ] Agregar T.M. Opera O y Rice Shower
+
+**Pendiente suelto (no bloquea, resolver cuando se pueda):** el historial solo se actualiza dentro de pensar(), así que los elif de acciones (paginas, apps, crear carpeta) no quedan registrados en la conversación — Nino "no recuerda" haber abierto algo o creado una carpeta. Arreglo: agregar historial.append(...) manualmente en esos elif también.
 
 ## Etapa 4: Voz (genérica primero)
 - [ ] Whisper local (que te escuche)
