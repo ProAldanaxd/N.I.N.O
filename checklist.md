@@ -32,10 +32,13 @@
 - [x] Historial de conversación (lista que crece con .append) para memoria de corto plazo y menos relectura del prompt
 - [x] Fix de ambigüedad de identidad usuario/personaje (regla explícita: "tú eres Nino, quien te escribe es {USUARIO}")
 - [x] Nino como personaje por defecto (es el único que existe por ahora, y responde bien)
-- [ ] **>>> AQUÍ VAS: Comando para cambiar de personaje**
-- [ ] Agregar T.M. Opera O y Rice Shower
+- [x] Fix del historial en acciones: abrir_url/abrir_app ahora reciben pensar(texto) como mensaje, así que registran la acción en el historial y Nino reacciona con personalidad en vez de frase fija (solución propia, más elegante que el plan original)
+- [x] "Crea una carpeta" integrado con pensar(): primero pregunta el nombre generando la pregunta con pensar() (mensaje explícito, evitando que el modelo alucine que ya se creó), pide el nombre con input() simple, ejecuta la lógica real, y reacciona con un mensaje descriptivo del resultado real (creada / ya existía) — confirmado que usa el historial para notar repeticiones
+- **PAUSADO por decisión propia:** comando para cambiar de personaje y agregar T.M. Opera O / Rice Shower — se retoman más adelante, después de dejar a Nino sólida
+- [ ] Comando para cambiar de personaje (pausado)
+- [ ] Agregar T.M. Opera O y Rice Shower (pausado)
 
-**Pendiente suelto (no bloquea, resolver cuando se pueda):** el historial solo se actualiza dentro de pensar(), así que los elif de acciones (paginas, apps, crear carpeta) no quedan registrados en la conversación — Nino "no recuerda" haber abierto algo o creado una carpeta. Arreglo: agregar historial.append(...) manualmente en esos elif también.
+**>>> AQUÍ VAS AHORA: seguir puliendo/probando a Nino sola antes de avanzar a otras etapas o personajes**
 
 ## Etapa 4: Voz (genérica primero)
 - [ ] Whisper local (que te escuche)
